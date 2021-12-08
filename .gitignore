@@ -10,3 +10,8 @@ npm-debug.log
 
 # OSX
 .DS_Store
+
+# Vim stuff
+*.swp
+
+.DS_Store

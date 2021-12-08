@@ -2,13 +2,15 @@
 
 ## Getting started
 
-1. Fork and clone this repo
-2. `npm install`
-3. Read the rest of this `README.md` carefully - it contains the requirements for the project and the grading rubric that will be used to assess it
-4. Check out the mock-view in the `wireframes` folder to get an idea of what the project _could_ look like
-5. Start the build process and your application with: `npm run start:dev`. If you using Windows, you may need to execute `npm run start-server` and `npm run build-watch` separately (in their own terminal tabs).
-6. If you navigate to the URL you should see some UI already :) [We already have some connection code to get you started]
-7. Check out the starting seed file in `seed.js` - you can run it by executing `npm run seed`
+1. Fork and clone this repo.
+2. `npm install`.
+3. Read the rest of this `README.md` carefully - it contains the requirements for the project and the grading rubric that will be used to assess it.
+4. Create `final-project` and `final-project-test` databases.
+5. Start the build process and your application with: `npm run start-dev`. If you're using Windows, you may need to execute `npm run start-server` and `npm run build-watch` separately (in their own terminal tabs).
+6. If you navigate to [localhost:1337](http://localhost:1337), you should see some UI already :) [We've provided some code to get you started]
+7. Check out the mock-view in the `wireframes` folder to get an idea of what the project _could_ look like.
+8. Run the tests with: `npm test`. Working through the tests is a good place to start!
+9. Check out the starting seed file in `seed.js` - you can run it by executing `npm run seed`. You will need to seed the database once you've set up the Sequelize models.
 
 ## Details
 
@@ -29,30 +31,23 @@ For the requirements and rubric, refer to the following two files:
 
 Make sure to read them carefully!
 
+There are some test specs already written for you to help you get started – these are _just a guide_ and are meant to help steer you through your coding process, or to be used as reference for writing your own test specs for extra credit (the tests that you can write for extra credit are marked with a leading \*\*\*). Passing or not passing these specs will not affect your grade.
+
 ### Views and Functionality
 
 Take a look in the wireframes folder as a reference for how your front-end _could_ look. Of course, you are encouraged to be creative and flex your own design muscles, but the wireframes should function as a good baseline/inspirational resource. Either way, the most important part of the project is that it works - **design/appearance is extra-credit**. If there ever appears to be a conflict between the wireframes and the rubric/requirements below, **go with the letter of the rubric/requirements.**
 
 ## Other Important Info
 
-### How to test functionality without a frontend
-- GET: use your browser
-- POST / PUT / DELETE :
- - CLI (command line interface) with `curl`
-   - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
-   - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]
- - [Postman](https://www.getpostman.com/)
-   ![](https://www.dropbox.com/s/4fk3b90cd0i1a5y/postman_post.png?raw=true)
-- Databases: use Sequelize in your routes and see if you are receiving what you expect
-
 ### Video Walkthrough
-Please submit a 5 to 10 minute screencast of a walk-through of the functionality *and code* for each user story in your app. E.g. for "As a user, I can create a campus", please show us that you can successfully create a campus in your app, and also the actual code that is involved in doing that (from the front-end components to the backend routes and models). We recommend using Quicktime to record the screencast (instructions on how to do that [here](https://support.apple.com/kb/PH5882?locale=en_US&viewlocale=en_US)).
+Please submit a short, 5 minute screencast of a walk-through of the functionality for each user story in your app. E.g. for "As a user, I can create a project", you can fill out the form for creating a project and then see the new project appear in the projects list. *There is no need to show us the code you wrote.* We recommend using Quicktime to record the screencast (instructions on how to do that [here](https://support.apple.com/kb/PH5882?locale=en_US&viewlocale=en_US)).
 
-Once you've recorded your screencast, please *upload it to YouTube as an unlisted video*. **Include a link to the video in your repo's README** and include your repo link in the video description. Your video will aid us in evaluating your submission.
+Once you've recorded your screencast, please *upload it to YouTube as an unlisted video*. **Include a link to the video in your repo's README** and include your repo link in the video description. This will aid us in evaluating your submission.
+
+Well before the deadline, we recommend practicing this by recording a very short screencast and uploading it as an unlisted video. If you encounter any technical issues, reach out to us so that we can help you resolve them.
 
 ## Evaluation
 
-- Requirements score (75%)
-- Rubric score (25%)
+- Requirements score (70%)
+- Rubric score (30%)
 - Extra credit (15% max)
-
