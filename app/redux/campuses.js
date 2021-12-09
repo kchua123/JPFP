@@ -17,7 +17,7 @@ export const fetchCampuses = () => {
     } catch (err) {
         console.log('THUNK ERROR: ', err)
     }
-}
+  }
 };
 
 // Take a look at app/redux/index.js to see where this reducer is

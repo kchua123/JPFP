@@ -22,6 +22,6 @@ module.exports = db.define('campus', {
   },
   imageUrl: {
     type: Sequelize.STRING,
-    defaultValue: "https://st.depositphotos.com/1064024/3289/i/600/depositphotos_32891271-stock-photo-mixed-colorful-fruit-bonbon.jpg"
+    defaultValue: "https://media.istockphoto.com/photos/path-through-sunlit-forest-picture-id1205214235?k=20&m=1205214235&s=612x612&w=0&h=TUNxmXOyHZ67rtPr8u9kmpn5lQAp9E-oMA2LfEshiu0="
   }
 });
