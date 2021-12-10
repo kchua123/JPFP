@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const db = require('./database');
 
-module.exports = db.define('student', {
+ const Student = db.define('student', {
   firstName: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -37,3 +37,5 @@ module.exports = db.define('student', {
       },
   }
 });
+
+module.exports = Student

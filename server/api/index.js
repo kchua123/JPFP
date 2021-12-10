@@ -3,6 +3,7 @@
 const router = require("express").Router();
 
 router.use('/campuses', require('./campuses'))
+router.use('/students', require('./students'))
 
 // Your routes go here!
 // NOTE: Any routes that you put here are ALREADY mounted on `/api`

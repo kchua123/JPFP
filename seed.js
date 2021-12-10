@@ -5,46 +5,62 @@ const Campus = require('./server/db/campus');
 const Student = require('./server/db/student');
 
 const campuses = [{
-  name: 'NY Campus',
-  address: 'New York, NY',
-  description: 'The Big Apple',
-  imageUrl: 'https://media.gettyimages.com/photos/aerial-view-of-lower-manhattan-new-york-picture-id946087016?s=612x612'
+  name: 'Gryffindor',
+  address: 'east wing 7th floor',
+  description: 'bravery, daring, nerve, and chivalry',
+  imageUrl: 'https://www.hp-lexicon.org/images/icons/shield_01-5B1-5D.jpg?ezimgfmt=ng:webp/ngcb22'
 }, {
-  name: 'LA Campus',
-  address: 'Los Angeles, CA',
-  description: 'City of Angels',
-  imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Los_Angeles_with_Mount_Baldy.jpg/288px-Los_Angeles_with_Mount_Baldy.jpg'
+  name: 'Hufflepuff',
+  address: 'basement',
+  description: 'hard work, dedication, patience, loyalty, and fair play',
+  imageUrl: 'https://www.hp-lexicon.org/wp-content/uploads/2015/08/hufflepuff-shield-200x0-c-default.jpg?ezimgfmt=ng:webp/ngcb22'
 }, {
-  name: 'SD Campus',
-  address: 'San Diego, CA',
-  description: 'Tacos',
-  imageUrl: 'https://media.istockphoto.com/photos/downtown-san-diego-skyline-in-california-usa-picture-id1188288800?k=20&m=1188288800&s=612x612&w=0&h=_d-507UNukOHxICHgK3IUG55SPoAyVPNx3zOamMcVxQ='
+  name: 'Ravenclaw',
+  address: 'west side tower',
+  description: 'intelligence, knowledge, curiosity, creativity and wit',
+  imageUrl: 'https://www.hp-lexicon.org/images/icons/shield_rav.jpg?ezimgfmt=ng:webp/ngcb22'
+}, {
+  name: 'Slytherin',
+  address: 'dungeons',
+  description: 'ambition, leadership, self-preservation, cunning and resourcefulness',
+  imageUrl: 'https://www.hp-lexicon.org/images/icons/shield_sly.jpg?ezimgfmt=ng:webp/ngcb22'
 }];
 
 const students = [{
-  firstName: 'Steve',
-  lastName: 'Rogers',
-  email: 'steve@avengers.com',
-  imageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/6b/Chris_Evans_as_Steve_Rogers_Captain_America.jpg',
-  gpa: 3.6
+  firstName: 'Minerva',
+  lastName: 'McGonagall',
+  email: 'minerva@hogwarts.edu',
+  imageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/ea/McGonagall_%28screenshot%29.jpg',
+  gpa: 3.6,
+  campusId: 1
 }, {
-  firstName: 'Tony',
-  lastName: 'Stark',
-  email: 'tony@avengers.com',
-  imageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f2/Robert_Downey_Jr._as_Tony_Stark_in_Avengers_Infinity_War.jpg',
-  gpa: 4.0
+  firstName: 'Hermione',
+  lastName: 'Granger',
+  email: 'hermione@hogwarts.edu',
+  imageUrl: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Hermione_Granger_poster.jpg/220px-Hermione_Granger_poster.jpg',
+  gpa: 4.0,
+  campusId: 1
 }, {
-  firstName: 'Bruce',
-  lastName: 'Banner',
-  email: 'bruce@avengers.com',
-  imageUrl: 'https://static.wikia.nocookie.net/ironman/images/f/f9/7c51a6800b4fd5e22fbb34311d0052734f995765.jpg/revision/latest/top-crop/width/360/height/450?cb=20191121173500',
-  gpa: 4.0
+  firstName: 'Nymphadora',
+  lastName: 'Tonks',
+  email: 'nymphadora@hogwarts.edu',
+  imageUrl: 'https://cdn.staticneo.com/w/harrypotter/thumb/Nymphadora_Tonks.jpg/200px-Nymphadora_Tonks.jpg',
+  gpa: 4.0,
+  campusId: 2
 }, {
-  firstName: 'Loki',
-  lastName: 'Laufeyson',
-  email: 'loki@avengers.com',
-  imageUrl: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/loki-tom-hiddleston-1623746367.jpg?crop=0.445xw:1.00xh;0.299xw,0&resize=480:*',
-  gpa: 3.8
+  firstName: 'Cho',
+  lastName: 'Chang',
+  email: 'cho@hogwarts.edu',
+  imageUrl: 'https://i.pinimg.com/474x/6c/f0/b3/6cf0b31af8687faea57005da1e5d2b38.jpg',
+  gpa: 3.8,
+  campusId: 3
+}, {
+  firstName: 'Bellatrix',
+  lastName: 'Black',
+  email: 'bellatrix@hogwarts.edu',
+  imageUrl: 'https://upload.wikimedia.org/wikipedia/en/d/d8/Bellatrix.jpeg',
+  gpa: 3.8,
+  campusId: 4
 }];
 
 const seed = async () => {
