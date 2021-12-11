@@ -21,9 +21,10 @@ export const fetchSingleCampus = (id) => {
   return async (dispatch) => {
     try {
         const {data: campus} = await axios.get(`/api/campuses/${id}`)
+        console.log('SUCCESSFUL FETCH_SINGLE_CAMPUS THUNK', campus)
         dispatch(setSingleCampus(campus))
     } catch (err) {
-        console.log('THUNK ERROR: ', err)
+        console.log('FETCH_SINGLE_CAMPUS THUNK ERROR: ', err)
     }
   }
 };
@@ -34,7 +35,7 @@ export const fetchCampusStudents = (id) => {
         const {data} = await axios.get(`/api/campuses/${id}/students`)
         dispatch(setCampusStudents(data))
       } catch (err) {
-        console.log('FETCHCAMPUSSTUDENTS THUNK ERROR: ', err)
+        console.log('FETCH_CAMPUS_STUDENTS THUNK ERROR: ', err)
       }
     }
   }

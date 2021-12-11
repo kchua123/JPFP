@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchSingleCampus } from "../redux/singleCampus";
 import { fetchCampusStudents } from "../redux/singleCampus";
+import { Link } from 'react-router-dom'
 
 export class SingleCampus extends React.Component {
   componentDidMount() {
@@ -22,7 +23,11 @@ export class SingleCampus extends React.Component {
         <div>
           {this.props.campus.students
             ? this.props.campus.students.map((student) => {
-                return <div key={student.id}>{student.firstName} {student.lastName}</div>;
+                return (
+                  <Link to={`/students/${student.id}`} key={student.id}>
+                  <div key={student.id}>{student.firstName} {student.lastName}</div>
+                  </Link>
+                )
               })
             : <h5>No students currently enrolled!</h5>}
         </div>
