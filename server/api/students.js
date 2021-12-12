@@ -19,5 +19,13 @@ studentRouter.get('/', async (req, res, next) => {
       next(err);
     }
   });
+
+  studentRouter.post('/', async (req, res, next) => {
+    try {
+      res.send(await Student.create(req.body));
+    } catch (error) {
+      next(error);
+    }
+  });
   
 module.exports = studentRouter

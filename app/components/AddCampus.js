@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addNewCampus } from "../redux/campuses";
-import { fetchCampuses } from "../redux/campuses";
 
 export class AddCampus extends React.Component {
   constructor() {
