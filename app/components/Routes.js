@@ -4,6 +4,7 @@ import AllCampuses from "./AllCampuses";
 import AllStudents from "./AllStudents";
 import SingleCampus from "./SingleCampus";
 import SingleStudent from "./SingleStudent";
+import AddCampus from './AddCampus'
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
           <h1>Welcome to Hogwarts!</h1>
           <Link to="/campuses">All Campuses</Link>
           <Link to="/students">All Students</Link>
+          <Route exact path="/campuses" component={AddCampus} />
           <Route exact path="/campuses" component={AllCampuses} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/campuses/:campusId" component={SingleCampus} />

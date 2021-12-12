@@ -60,13 +60,13 @@ Congrats! You have completed your first vertical slice! Make sure to `commit -m 
 - [x] Display the appropriate student when the url matches `/students/:studentId`
 - [x] Clicking on a student from the all-students view should navigate to show that student in the single-student view
 
-- [ ] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
+- [x] Clicking on the name of a student in the single-campus view should navigate to show that student in the single-student view
 - [x] Clicking on the name of a campus in the single-student view should navigate to show that campus in the single-campus view
 
 #### Backend
 
 - [x] Write a route to serve up a single campus (based on its id), _including that campuses' students_
-- [ ] Write a route to serve up a single student (based on their id), _including that student's campus_
+- [x] Write a route to serve up a single student (based on their id), _including that student's campus_
 
 Congrats! You have completed your second vertical slice! Make sure to `commit -m "Feature: Get Single Campus and Student"` before moving on (see RUBRIC.md - points are awarded/deducted for a proper git workflow)!
 
@@ -78,12 +78,12 @@ Congrats! You have completed your second vertical slice! Make sure to `commit -m
 
 #### Frontend
 
-- [ ] Write a component to display a form for adding a new campus that contains inputs for _at least_ the name and address.
-- [ ] Display this component as part of the all-campuses view, alongside the list of campuses
+- [x] Write a component to display a form for adding a new campus that contains inputs for _at least_ the name and address.
+- [x] Display this component as part of the all-campuses view, alongside the list of campuses
 - Submitting the form with a valid name/address should:
 
-  - [ ] Make an AJAX request that causes the new campus to be persisted in the database
-  - [ ] Add the new campus to the list of campuses without needing to refresh the page
+  - [x] Make an AJAX request that causes the new campus to be persisted in the database
+  - [x] Add the new campus to the list of campuses without needing to refresh the page
 
 - [ ] Write a component to display a form for adding a new student that contains inputs for _at least_ first name, last name and email
 - [ ] Display this component as part of the all-students view, alongside the list of students

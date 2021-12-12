@@ -37,4 +37,12 @@ campusRouter.get('/:campusId/students', async (req, res, next) => {
   }
 })
 
+campusRouter.post('/', async (req, res, next) => {
+  try {
+    res.send(await Campus.create(req.body));
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = campusRouter;

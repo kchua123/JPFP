@@ -15,10 +15,7 @@ const db = require('./database');
       },
   },
   description: {
-    type: Sequelize.TEXT,
-    validate: {
-      notEmpty: true,
-    },
+    type: Sequelize.TEXT
   },
   imageUrl: {
     type: Sequelize.STRING,

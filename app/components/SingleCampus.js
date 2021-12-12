@@ -7,8 +7,14 @@ import { Link } from 'react-router-dom'
 export class SingleCampus extends React.Component {
   componentDidMount() {
     this.props.getCampus(this.props.match.params.campusId);
-    this.props.getStudents(this.props.match.params.campusId);
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.campus.name !== prevProps.campus.name){
+  this.props.getStudents(this.props.match.params.campusId);
+    }
+}
+
   render() {
     console.log("THIS.PROPS.CAMPUS", this.props.campus);
     console.log("THIS.PROPS.CAMPUS.STUDENTS", this.props.campus.students);

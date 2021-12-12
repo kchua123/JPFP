@@ -31,3 +31,11 @@ main {
   flex-direction: column;
   justify-content: center;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+  margin: 1em;
+}
