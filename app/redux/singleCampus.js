@@ -2,7 +2,7 @@ import axios from "axios";
 
 const SET_SINGLE_CAMPUS = "SET_SINGLE_CAMPUS";
 const SET_CAMPUS_STUDENTS = "SET_CAMPUS_STUDENTS";
-
+const UPDATE_CAMPUS = "UPDATE_CAMPUS";
 
 export const setSingleCampus = (campus) => {
   return {
@@ -18,7 +18,12 @@ export const setCampusStudents = (students) => {
   };
 };
 
-
+const updateCampus = (campus) => {
+  return {
+    type: UPDATE_CAMPUS,
+    campus,
+  };
+};
 
 export const fetchSingleCampus = (id) => {
   return async (dispatch) => {
@@ -43,16 +48,30 @@ export const fetchCampusStudents = (id) => {
   };
 };
 
-
+export const updateACampus = (campus) => {
+  return async (dispatch) => {
+    try {
+      const {data: updatedCampus} = await axios.put(
+        `/api/campuses/${campus.id}`,
+        campus
+      );
+      dispatch(updateCampus(updatedCampus));
+    } catch (err) {
+      console.log("UPDATE_CAMPUS THUNK ERROR: ", err);
+    }
+  };
+};
 
 // Take a look at app/redux/index.js to see where this reducer is
 // added to the Redux store with combineReducers
-export default function campusReducer(state = [], action) {
+export default function campusReducer(state = {}, action) {
   switch (action.type) {
     case SET_SINGLE_CAMPUS:
       return action.campus;
     case SET_CAMPUS_STUDENTS:
       return { ...state, students: action.students };
+    case UPDATE_CAMPUS:
+      return action.campus
     default:
       return state;
   }

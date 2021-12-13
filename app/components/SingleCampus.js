@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchSingleCampus } from "../redux/singleCampus";
 import { fetchCampusStudents } from "../redux/singleCampus";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
+import UpdateCampus from "./UpdateCampus";
 
 export class SingleCampus extends React.Component {
   componentDidMount() {
@@ -10,10 +11,14 @@ export class SingleCampus extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.campus.name !== prevProps.campus.name){
-  this.props.getStudents(this.props.match.params.campusId);
+    if (this.props.campus.name !== prevProps.campus.name) {
+      this.props.getStudents(this.props.match.params.campusId);
     }
-}
+    if (this.props.campus.address !== prevProps.campus.address) {
+      this.props.getStudents(this.props.match.params.campusId);
+    }
+    console.log("***COMPONENTDIDUPDATE responding!!!");
+  }
 
   render() {
     console.log("THIS.PROPS.CAMPUS", this.props.campus);
@@ -27,15 +32,22 @@ export class SingleCampus extends React.Component {
         <h4>Description: {this.props.campus.description}</h4>
         <h4>Students:</h4>
         <div>
-          {this.props.campus.students
-            ? this.props.campus.students.map((student) => {
-                return (
-                  <Link to={`/students/${student.id}`} key={student.id}>
-                  <div key={student.id}>{student.firstName} {student.lastName}</div>
-                  </Link>
-                )
-              })
-            : <h5>No students currently enrolled!</h5>}
+          {this.props.campus.students ? (
+            this.props.campus.students.map((student) => {
+              return (
+                <Link to={`/students/${student.id}`} key={student.id}>
+                  <div key={student.id}>
+                    {student.firstName} {student.lastName}
+                  </div>
+                </Link>
+              );
+            })
+          ) : (
+            <h5>No students currently enrolled!</h5>
+          )}
+        </div>
+        <div>
+          <UpdateCampus />
         </div>
       </div>
     );

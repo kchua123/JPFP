@@ -28,7 +28,6 @@ campusRouter.get('/:campusId/students', async (req, res, next) => {
         campusId: req.params.campusId
       }
     })
-    console.log('CONSOLE LOG STUDENTS FROM CAMPUSROUTER', students)
     res.send(students)
   }
   catch (error) {
@@ -50,6 +49,15 @@ campusRouter.delete('/:id', async (req, res, next) => {
     const campus = await Campus.findByPk(req.params.id);
     await campus.destroy();
     res.send(campus);
+  } catch (error) {
+    next(error);
+  }
+});
+
+campusRouter.put('/:id', async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id);
+    res.send(await campus.update(req.body));
   } catch (error) {
     next(error);
   }
