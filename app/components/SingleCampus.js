@@ -4,6 +4,8 @@ import { fetchSingleCampus } from "../redux/singleCampus";
 import { fetchCampusStudents } from "../redux/singleCampus";
 import { Link } from "react-router-dom";
 import UpdateCampus from "./UpdateCampus";
+import { unregisterAStudent } from '../redux/singleStudent'
+import UnregisterStudent from './UnregisterStudent'
 
 export class SingleCampus extends React.Component {
   componentDidMount() {
@@ -34,12 +36,15 @@ export class SingleCampus extends React.Component {
         <div>
           {this.props.campus.students ? (
             this.props.campus.students.map((student) => {
+              console.log('STUDENT ID: ', student.id)
               return (
+                <div key={student.id}>
                 <Link to={`/students/${student.id}`} key={student.id}>
                   <div key={student.id}>
                     {student.firstName} {student.lastName}
                   </div>
                 </Link>
+              </div>
               );
             })
           ) : (
@@ -65,6 +70,7 @@ const mapDispatch = (dispatch) => {
   return {
     getCampus: (id) => dispatch(fetchSingleCampus(id)),
     getStudents: (id) => dispatch(fetchCampusStudents(id)),
+    unregisterStudent: (student) => dispatch(unregisterAStudent(student))
   };
 };
 

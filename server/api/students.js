@@ -38,4 +38,13 @@ studentRouter.get('/', async (req, res, next) => {
     }
   });
   
+  studentRouter.put('/:studentId', async (req, res, next) => {
+    try {
+      const student = await Student.findByPk(req.params.studentId);
+      res.send(await student.update(req.body));
+    } catch (error) {
+      next(error);
+    }
+  });
+
 module.exports = studentRouter

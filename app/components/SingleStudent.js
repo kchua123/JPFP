@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchSingleStudent } from "../redux/singleStudent";
 import { fetchSingleCampus } from "../redux/singleCampus";
+import UpdateStudent from './UpdateStudent'
 
 export class SingleStudent extends React.Component {
   componentDidMount() {
@@ -9,7 +10,7 @@ export class SingleStudent extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-      if (this.props.student.campusId !== prevProps.student.campusId){
+      if (this.props.student.id !== prevProps.student.id){
     this.props.getCampus(this.props.student.campusId);
       }
   }
@@ -25,6 +26,9 @@ export class SingleStudent extends React.Component {
         <h4>Email: {this.props.student.email}</h4>
         <h4>GPA: {this.props.student.gpa}</h4>
         <h4>Campus: {this.props.campus.name ? this.props.campus.name : <div>No campus assigned!</div>}</h4>
+        <div>
+          <UpdateStudent />
+        </div>
       </div>
     );
   }
