@@ -32,8 +32,8 @@ export class AddStudent extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Add New Student:</h3>
+      <div className="add-form">
+        <h4>Add New Student:</h4>
         <form id="add-student-form" onSubmit={this.submitHandler}>
           <label htmlFor="firstName">Student First Name: </label>
           <input

@@ -14,13 +14,13 @@ export class AllCampuses extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="campus-list">
         {this.props.campuses.map((campus) => {
           return (
             <div key={campus.id}>
-              <Link to={`/campuses/${campus.id}`} key={campus.id}>
+              <Link to={`/campuses/${campus.id}`} key={campus.id} style={{ textDecoration: 'none', color: "black" }}>
                 <div key={campus.id}>
-                  <h2>{campus.name}</h2>
+                  <h3>{campus.name}</h3>
                   <img src={campus.imageUrl} />
                 </div>
               </Link>

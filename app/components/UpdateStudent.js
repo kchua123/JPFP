@@ -50,8 +50,8 @@ export class UpdateStudent extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Update Student Details:</h3>
+      <div className="update-form">
+        <h5>Update Student Details:</h5>
         <form id="update-student-form" onSubmit={this.submitHandler}>
           <label htmlFor="firstName">Student First Name: </label>
           <input

@@ -22,16 +22,16 @@ export class SingleStudent extends React.Component {
           {this.props.student.firstName} {this.props.student.lastName}
         </h2>
         <img src={this.props.student.imageUrl} />
-        <h4>Email: {this.props.student.email}</h4>
-        <h4>GPA: {this.props.student.gpa}</h4>
-        <h4>
+        <h5>Email: {this.props.student.email}</h5>
+        <h5>GPA: {this.props.student.gpa}</h5>
+        <h5>
           Campus:{" "}
           {this.props.campus.name ? (
             this.props.campus.name
           ) : (
             <div>No campus assigned!</div>
           )}
-        </h4>
+        </h5>
         <div>
           <UpdateStudent />
         </div>

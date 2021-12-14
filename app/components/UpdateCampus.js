@@ -50,9 +50,9 @@ export class UpdateCampus extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Update Campus Details:</h3>
-        <form id="update-campus-form" onSubmit={this.submitHandler}>
+      <div className="update-form" >
+        <h4>Update Campus Details:</h4>
+        <form onSubmit={this.submitHandler}>
           <label htmlFor="name">Campus Name: </label>
           <input
             name="name"

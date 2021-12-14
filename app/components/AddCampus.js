@@ -30,8 +30,8 @@ export class AddCampus extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Add New Campus:</h3>
+      <div className="add-form">
+        <h4>Add New Campus:</h4>
         <form id="add-campus-form" onSubmit={this.submitHandler}>
           <label htmlFor="name">Campus Name: </label>
           <input

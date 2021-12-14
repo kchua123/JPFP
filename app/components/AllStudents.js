@@ -13,15 +13,15 @@ export class AllStudents extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="student-list">
         {this.props.students.map((student) => {
           return (
             <div key={student.id}>
-              <Link to={`/students/${student.id}`} key={student.id}>
+              <Link to={`/students/${student.id}`} key={student.id} style={{ textDecoration: 'none', color: "black" }}>
                 <div key={student.id}>
-                  <h2>
+                  <h4>
                     {student.firstName} {student.lastName}
-                  </h2>
+                  </h4>
                 </div>
               </Link>
               <form onSubmit={(event) => event.preventDefault()}>
@@ -35,7 +35,7 @@ export class AllStudents extends React.Component {
             </div>
           );
         })}
-        <AddStudent />
+        <div id="form"><AddStudent /></div>
       </div>
     );
   }

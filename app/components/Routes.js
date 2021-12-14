@@ -10,14 +10,28 @@ const Routes = () => {
     <Router>
       <div>
         <nav>
-          <Link to="/campuses">All Campuses</Link>
-          <Link to="/students">All Students</Link>
+          <div className="title">
+            <h3>The Margaret Hamilton Interplanetary Academy of JavaScript</h3>
+          </div>
+          <div className="nav-item">
+            <Link
+              to="/campuses"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              All Campuses
+            </Link>
+          </div>
+          <div className="nav-item">
+            <Link
+              to="/students"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              All Students
+            </Link>
+          </div>
         </nav>
         <main>
-          <h1>
-            Welcome to The Margaret Hamilton Interplanetary Academy of
-            JavaScript
-          </h1>
+          <Route exact path="/" component={AllCampuses} />
           <Route exact path="/campuses" component={AllCampuses} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/campuses/:campusId" component={SingleCampus} />
