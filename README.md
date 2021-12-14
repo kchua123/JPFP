@@ -1,3 +1,5 @@
+LINK TO WALKTHROUGH VIDEO: https://youtu.be/kuvUPgfwHF8
+
 # Junior Phase Final Project
 
 ## Getting started

@@ -29,7 +29,7 @@ export class AllStudents extends React.Component {
                   className="remove"
                   onClick={() => this.props.deleteStudent(student.id)}
                 >
-                  Delete Student
+                  Remove Student
                 </button>
               </form>
             </div>

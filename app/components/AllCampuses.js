@@ -29,7 +29,7 @@ export class AllCampuses extends React.Component {
                   className="remove"
                   onClick={() => this.props.deleteCampus(campus.id)}
                 >
-                  Delete Campus
+                  Remove Campus
                 </button>
               </form>
             </div>

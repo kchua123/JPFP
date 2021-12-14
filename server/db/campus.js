@@ -20,7 +20,7 @@ const Campus = db.define("campus", {
   imageUrl: {
     type: Sequelize.STRING,
     defaultValue:
-      "https://media.istockphoto.com/photos/path-through-sunlit-forest-picture-id1205214235?k=20&m=1205214235&s=612x612&w=0&h=TUNxmXOyHZ67rtPr8u9kmpn5lQAp9E-oMA2LfEshiu0=",
+      "https://www.colourbox.com/preview/7775452-magic-book.jpg"
   },
 });
 

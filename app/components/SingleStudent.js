@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchSingleStudent } from "../redux/singleStudent";
 import { fetchSingleCampus } from "../redux/singleCampus";
 import UpdateStudent from "./UpdateStudent";
+import { Link } from "react-router-dom";
 
 export class SingleStudent extends React.Component {
   componentDidMount() {
@@ -27,7 +28,11 @@ export class SingleStudent extends React.Component {
         <h5>
           Campus:{" "}
           {this.props.campus.name ? (
-            this.props.campus.name
+    
+            <div>
+              {this.props.campus.name}
+            </div>
+
           ) : (
             <div>No campus assigned!</div>
           )}

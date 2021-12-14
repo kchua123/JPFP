@@ -54,7 +54,7 @@ button {
 }
 
 img {
-  width:150px
+  height:200px
 }
 
 .nav-item {
@@ -62,7 +62,7 @@ img {
   border-radius: 3px;
   background-color: darkgray;
   margin: 10px
-}
+} 
 
 #student-list {
   display: flex;

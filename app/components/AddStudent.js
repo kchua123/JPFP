@@ -32,7 +32,7 @@ export class AddStudent extends React.Component {
 
   render() {
     return (
-      <div className="add-form">
+      <div className="update-form">
         <h4>Add New Student:</h4>
         <form id="add-student-form" onSubmit={this.submitHandler}>
           <label htmlFor="firstName">Student First Name: </label>
