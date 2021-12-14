@@ -12,6 +12,7 @@ export class UpdateCampus extends React.Component {
     this.state = {
       name: "",
       address: "",
+      description: "",
     };
     this.changeHandler = this.changeHandler.bind(this);
     this.submitHandler = this.submitHandler.bind(this);
@@ -22,6 +23,7 @@ export class UpdateCampus extends React.Component {
       this.setState({
         name: this.props.campus.name || "",
         address: this.props.campus.address || "",
+        description: this.props.campus.description || "",
       });
     }
   }
@@ -38,25 +40,15 @@ export class UpdateCampus extends React.Component {
 
   submitHandler(event) {
     event.preventDefault();
-    console.log(
-      "SUBMITHANDLER THIS.PROPS.CAMPUS: ",
-      this.props.campus,
-      "SUBMITHANDLER THIS.STATE: ",
-      this.state
-    );
     this.props.updateCampus({ ...this.props.campus, ...this.state });
     this.setState({
       name: "",
       address: "",
+      description: "",
     });
   }
 
   render() {
-    console.log("**NEW RENDER OF UPDATECAMPUS** ");
-    console.log(
-      "THIS.PROPS.CAMPUS AFTER UPDATECAMPUS RENDER",
-      this.props.campus
-    );
     return (
       <div>
         <h3>Update Campus Details:</h3>
@@ -73,6 +65,13 @@ export class UpdateCampus extends React.Component {
             name="address"
             onChange={this.changeHandler}
             value={this.state.address}
+          />
+
+          <label htmlFor="description">Campus Description: </label>
+          <input
+            name="description"
+            onChange={this.changeHandler}
+            value={this.state.description}
           />
 
           <button type="submit">Submit</button>

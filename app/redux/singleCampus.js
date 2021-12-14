@@ -29,7 +29,6 @@ export const fetchSingleCampus = (id) => {
   return async (dispatch) => {
     try {
       const { data: campus } = await axios.get(`/api/campuses/${id}`);
-      console.log("SUCCESSFUL FETCH_SINGLE_CAMPUS THUNK", campus);
       dispatch(setSingleCampus(campus));
     } catch (err) {
       console.log("FETCH_SINGLE_CAMPUS THUNK ERROR: ", err);
@@ -51,7 +50,7 @@ export const fetchCampusStudents = (id) => {
 export const updateACampus = (campus) => {
   return async (dispatch) => {
     try {
-      const {data: updatedCampus} = await axios.put(
+      const { data: updatedCampus } = await axios.put(
         `/api/campuses/${campus.id}`,
         campus
       );
@@ -71,7 +70,7 @@ export default function campusReducer(state = {}, action) {
     case SET_CAMPUS_STUDENTS:
       return { ...state, students: action.students };
     case UPDATE_CAMPUS:
-      return action.campus
+      return action.campus;
     default:
       return state;
   }

@@ -1,11 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchSingleCampus } from "../redux/singleCampus";
-import { fetchCampusStudents } from "../redux/singleCampus";
+import { fetchSingleCampus, fetchCampusStudents } from "../redux/singleCampus";
 import { Link } from "react-router-dom";
 import UpdateCampus from "./UpdateCampus";
-import { unregisterAStudent } from '../redux/singleStudent'
-import UnregisterStudent from './UnregisterStudent'
+import { unregisterAStudent } from "../redux/singleStudent";
 
 export class SingleCampus extends React.Component {
   componentDidMount() {
@@ -19,13 +17,12 @@ export class SingleCampus extends React.Component {
     if (this.props.campus.address !== prevProps.campus.address) {
       this.props.getStudents(this.props.match.params.campusId);
     }
-    console.log("***COMPONENTDIDUPDATE responding!!!");
+    if (this.props.campus.description !== prevProps.campus.description) {
+      this.props.getStudents(this.props.match.params.campusId);
+    }
   }
 
   render() {
-    console.log("THIS.PROPS.CAMPUS", this.props.campus);
-    console.log("THIS.PROPS.CAMPUS.STUDENTS", this.props.campus.students);
-    console.log("NEW RENDER!!!");
     return (
       <div>
         <h2>{this.props.campus.name}</h2>
@@ -36,15 +33,15 @@ export class SingleCampus extends React.Component {
         <div>
           {this.props.campus.students ? (
             this.props.campus.students.map((student) => {
-              console.log('STUDENT ID: ', student.id)
+              console.log("STUDENT ID: ", student.id);
               return (
                 <div key={student.id}>
-                <Link to={`/students/${student.id}`} key={student.id}>
-                  <div key={student.id}>
-                    {student.firstName} {student.lastName}
-                  </div>
-                </Link>
-              </div>
+                  <Link to={`/students/${student.id}`} key={student.id}>
+                    <div key={student.id}>
+                      {student.firstName} {student.lastName}
+                    </div>
+                  </Link>
+                </div>
               );
             })
           ) : (
@@ -60,7 +57,6 @@ export class SingleCampus extends React.Component {
 }
 
 const mapState = (state) => {
-  console.log("STATE.CAMPUS: ", state.campus);
   return {
     campus: state.campus,
   };
@@ -70,7 +66,7 @@ const mapDispatch = (dispatch) => {
   return {
     getCampus: (id) => dispatch(fetchSingleCampus(id)),
     getStudents: (id) => dispatch(fetchCampusStudents(id)),
-    unregisterStudent: (student) => dispatch(unregisterAStudent(student))
+    unregisterStudent: (student) => dispatch(unregisterAStudent(student)),
   };
 };
 

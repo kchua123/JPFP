@@ -21,15 +21,14 @@ export class AddCampus extends React.Component {
 
   submitHandler(event) {
     event.preventDefault();
-    this.props.addCampus({...this.state})
+    this.props.addCampus({ ...this.state });
     this.setState({
-        name: '',
-        address: ''
-    })
+      name: "",
+      address: "",
+    });
   }
 
   render() {
-      console.log('**NEW RENDER OF ADDCAMPUS** ')
     return (
       <div>
         <h3>Add New Campus:</h3>

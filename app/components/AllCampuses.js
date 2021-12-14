@@ -1,9 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchCampuses } from "../redux/campuses";
+import { fetchCampuses, deleteCampus } from "../redux/campuses";
 import { Link } from "react-router-dom";
 import AddCampus from "./AddCampus";
-import { deleteCampus } from "../redux/campuses";
 
 // Notice that we're exporting the AllCampuses component twice. The named export
 // (below) is not connected to Redux, while the default export (at the very

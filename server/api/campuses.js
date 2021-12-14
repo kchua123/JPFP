@@ -21,22 +21,21 @@ campusRouter.get("/:campusId", async (req, res, next) => {
   }
 });
 
-campusRouter.get('/:campusId/students', async (req, res, next) => {
+campusRouter.get("/:campusId/students", async (req, res, next) => {
   try {
     const students = await Student.findAll({
       where: {
-        campusId: req.params.campusId
-      }
-    })
-    res.send(students)
+        campusId: req.params.campusId,
+      },
+    });
+    res.send(students);
+  } catch (error) {
+    console.log("ROUTER ERROR FOR /:campusId/students");
+    next(error);
   }
-  catch (error) {
-    console.log("ROUTER ERROR FOR /:campusId/students")
-    next(error)
-  }
-})
+});
 
-campusRouter.post('/', async (req, res, next) => {
+campusRouter.post("/", async (req, res, next) => {
   try {
     res.send(await Campus.create(req.body));
   } catch (error) {
@@ -44,7 +43,7 @@ campusRouter.post('/', async (req, res, next) => {
   }
 });
 
-campusRouter.delete('/:id', async (req, res, next) => {
+campusRouter.delete("/:id", async (req, res, next) => {
   try {
     const campus = await Campus.findByPk(req.params.id);
     await campus.destroy();
@@ -54,7 +53,7 @@ campusRouter.delete('/:id', async (req, res, next) => {
   }
 });
 
-campusRouter.put('/:id', async (req, res, next) => {
+campusRouter.put("/:id", async (req, res, next) => {
   try {
     const campus = await Campus.findByPk(req.params.id);
     res.send(await campus.update(req.body));

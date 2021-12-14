@@ -2,7 +2,7 @@ import axios from "axios";
 
 const SET_SINGLE_STUDENT = "SET_SINGLE_STUDENT";
 const UPDATE_STUDENT = "UPDATE_STUDENT";
-const UNREGISTER_STUDENT = 'UNREGISTER_STUDENT'
+const UNREGISTER_STUDENT = "UNREGISTER_STUDENT";
 
 export const setSingleStudent = (student) => {
   return {
@@ -31,7 +31,7 @@ export const fetchSingleStudent = (id) => {
       const { data: student } = await axios.get(`/api/students/${id}`);
       dispatch(setSingleStudent(student));
     } catch (err) {
-      console.log("SINGLESTUDENT THUNK ERROR: ", err);
+      console.log("FETCH_SINGLE_STUDENT THUNK ERROR: ", err);
     }
   };
 };
@@ -71,7 +71,7 @@ export default function studentReducer(state = {}, action) {
     case UPDATE_STUDENT:
       return action.student;
     case UNREGISTER_STUDENT:
-      return {...state, campusId: null};
+      return { ...state, campusId: null };
     default:
       return state;
   }

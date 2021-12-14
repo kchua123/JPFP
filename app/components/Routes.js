@@ -4,17 +4,20 @@ import AllCampuses from "./AllCampuses";
 import AllStudents from "./AllStudents";
 import SingleCampus from "./SingleCampus";
 import SingleStudent from "./SingleStudent";
-import AddCampus from './AddCampus'
 
 const Routes = () => {
   return (
     <Router>
       <div>
-        <nav>Welcome!</nav>
-        <main>
-          <h1>Welcome to Hogwarts!</h1>
+        <nav>
           <Link to="/campuses">All Campuses</Link>
           <Link to="/students">All Students</Link>
+        </nav>
+        <main>
+          <h1>
+            Welcome to The Margaret Hamilton Interplanetary Academy of
+            JavaScript
+          </h1>
           <Route exact path="/campuses" component={AllCampuses} />
           <Route exact path="/students" component={AllStudents} />
           <Route path="/campuses/:campusId" component={SingleCampus} />

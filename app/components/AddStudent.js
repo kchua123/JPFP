@@ -31,7 +31,6 @@ export class AddStudent extends React.Component {
   }
 
   render() {
-    console.log("**NEW RENDER OF ADDSTUDENT** ");
     return (
       <div>
         <h3>Add New Student:</h3>

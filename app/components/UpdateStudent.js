@@ -40,12 +40,6 @@ export class UpdateStudent extends React.Component {
 
   submitHandler(event) {
     event.preventDefault();
-    console.log(
-      "SUBMITHANDLER THIS.PROPS.STUDENT: ",
-      this.props.student,
-      "SUBMITHANDLER THIS.STATE: ",
-      this.state
-    );
     this.props.updateStudent({ ...this.props.student, ...this.state });
     this.setState({
       firstName: "",
@@ -55,11 +49,6 @@ export class UpdateStudent extends React.Component {
   }
 
   render() {
-    console.log("**NEW RENDER OF UPDATESTUDENT** ");
-    console.log(
-      "THIS.PROPS.STUDENT AFTER UPDATESTUDENT RENDER",
-      this.props.student
-    );
     return (
       <div>
         <h3>Update Student Details:</h3>
@@ -71,7 +60,7 @@ export class UpdateStudent extends React.Component {
             value={this.state.firstName}
           />
 
-            <label htmlFor="lastName">Student Last Name: </label>
+          <label htmlFor="lastName">Student Last Name: </label>
           <input
             name="lastName"
             onChange={this.changeHandler}
@@ -100,7 +89,6 @@ const mapDispatch = (dispatch) => {
   return {
     updateStudent: (student) => dispatch(updateAStudent(student)),
     getStudent: (id) => dispatch(fetchSingleStudent(id)),
-    clearStudent: () => dispatch(setSingleStudent({})),
   };
 };
 
